@@ -5,7 +5,7 @@
 
 Name: krunner
 Version: 4.99.0
-Release: 2
+Release: 3
 Source0: http://ftp5.gwdg.de/pub/linux/kde/unstable/frameworks/%{version}/portingAids/%{name}-%{version}.tar.xz
 Summary: Parallelized query system
 URL: http://kde.org/
