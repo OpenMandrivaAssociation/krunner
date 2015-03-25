@@ -5,7 +5,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: krunner
-Version: 5.7.0
+Version: 5.8.0
 Release: 1
 Source0: http://ftp5.gwdg.de/pub/linux/kde/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/portingAids/%{name}-%{version}.tar.xz
 Summary: Parallelized query system
@@ -32,7 +32,7 @@ BuildRequires: ninja
 Requires: %{libname} = %{EVRD}
 
 %description
-Parallelized query system
+Parallelized query system.
 
 %package -n %{libname}
 Summary: Parallelized query system
@@ -40,7 +40,7 @@ Group: System/Libraries
 Requires: %{name} = %{EVRD}
 
 %description -n %{libname}
-Parallelized query system
+Parallelized query system.
 
 %package -n %{devname}
 Summary: Development files for the KDE Frameworks 5 Runner library
@@ -48,7 +48,7 @@ Group: Development/KDE and Qt
 Requires: %{libname} = %{EVRD}
 
 %description -n %{devname}
-Development files for the KDE Frameworks 5 Runner library
+Development files for the KDE Frameworks 5 Runner library.
 
 %prep
 %setup -q
