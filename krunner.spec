@@ -12,9 +12,6 @@ Summary: Parallelized query system
 URL: http://kde.org/
 License: GPL
 Group: System/Libraries
-BuildRequires: cmake
-BuildRequires: qmake5
-BuildRequires: extra-cmake-modules5
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5Gui)
 BuildRequires: pkgconfig(Qt5Network)
@@ -23,9 +20,7 @@ BuildRequires: pkgconfig(Qt5Quick)
 BuildRequires: pkgconfig(Qt5Test)
 BuildRequires: pkgconfig(Qt5Widgets)
 BuildRequires: cmake(KF5DocTools)
-BuildRequires: cmake(Qt5)
 BuildRequires: cmake(ECM)
-BuildRequires: cmake(Qt5)
 BuildRequires: cmake(KF5Config)
 BuildRequires: cmake(KF5CoreAddons)
 BuildRequires: cmake(KF5I18n)
@@ -34,7 +29,6 @@ BuildRequires: cmake(KF5Service)
 BuildRequires: cmake(KF5Plasma)
 BuildRequires: cmake(KF5Solid)
 BuildRequires: cmake(KF5ThreadWeaver)
-BuildRequires: ninja
 Requires: %{libname} = %{EVRD}
 
 %description
@@ -58,14 +52,13 @@ Development files for the KDE Frameworks 5 Runner library.
 
 %prep
 %setup -q
-%cmake -G Ninja \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+%cmake_kde5
 
 %build
-ninja -C build
+%ninja -C build
 
 %install
-DESTDIR="%{buildroot}" ninja -C build install %{?_smp_mflags}
+%ninja_install -C build
 
 %files
 %{_libdir}/qt5/qml/org/kde/runnermodel
