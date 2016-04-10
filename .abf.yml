@@ -1,4 +1,2 @@
-removed_sources:
-  krunner-5.13.0.tar.xz: 040b844daff2a3aafa64bc037801fbd6ed766d2b
 sources:
-  krunner-5.20.0.tar.xz: d848e81ad332b321b04a84d5a20d89d31ff829e8
+  krunner-5.21.0.tar.xz: 8475e87b2c6cd4301090ce38f0c1d28ac7439963
