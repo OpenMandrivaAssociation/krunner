@@ -5,7 +5,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: krunner
-Version: 5.40.0
+Version: 5.41.0
 Release: 1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: Parallelized query system
@@ -61,6 +61,7 @@ Development files for the KDE Frameworks 5 Runner library.
 %ninja_install -C build
 
 %files
+%{_sysconfdir}/xdg/krunner.categories
 %{_libdir}/qt5/qml/org/kde/runnermodel
 %{_datadir}/kservicetypes5/*
 %{_datadir}/dbus-1/interfaces/kf5_org.kde.krunner1.xml
