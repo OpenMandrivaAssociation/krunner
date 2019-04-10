@@ -5,8 +5,8 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: krunner
-Version: 5.56.0
-Release: 2
+Version: 5.57.0
+Release: 1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: Parallelized query system
 URL: http://kde.org/
@@ -30,6 +30,8 @@ BuildRequires: cmake(KF5Service)
 BuildRequires: cmake(KF5Plasma)
 BuildRequires: cmake(KF5Solid)
 BuildRequires: cmake(KF5ThreadWeaver)
+# For QCH format docs
+BuildRequires: qt5-assistant
 Requires: %{libname} = %{EVRD}
 
 %description
@@ -50,6 +52,14 @@ Requires: %{libname} = %{EVRD}
 
 %description -n %{devname}
 Development files for the KDE Frameworks 5 Runner library.
+
+%package -n %{name}-devel-docs
+Summary: Developer documentation for %{name} for use with Qt Assistant
+Group: Documentation
+Suggests: %{devname} = %{EVRD}
+
+%description -n %{name}-devel-docs
+Developer documentation for %{name} for use with Qt Assistant
 
 %prep
 %setup -q
@@ -77,3 +87,6 @@ Development files for the KDE Frameworks 5 Runner library.
 %{_libdir}/cmake/KF5*
 %{_libdir}/qt5/mkspecs/*
 %{_datadir}/kdevappwizard
+
+%files -n %{name}-devel-docs
+%{_docdir}/qt5/*.{tags,qch}
