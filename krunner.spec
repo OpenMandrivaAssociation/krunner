@@ -31,6 +31,7 @@ BuildRequires: cmake(KF5Plasma)
 BuildRequires: cmake(KF5Solid)
 BuildRequires: cmake(KF5ThreadWeaver)
 # For QCH format docs
+BuildRequires: doxygen
 BuildRequires: qt5-assistant
 Requires: %{libname} = %{EVRD}
 
