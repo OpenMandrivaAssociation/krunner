@@ -6,8 +6,9 @@
 
 Name: krunner
 Version: 5.72.0
-Release: 1
+Release: 2
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
+Patch0:	https://invent.kde.org/frameworks/krunner/commit/8f7ce559b84ee0c21de0256e6591793e4b95f411.patch
 Summary: Parallelized query system
 URL: http://kde.org/
 License: GPL
@@ -63,7 +64,7 @@ Suggests: %{devname} = %{EVRD}
 Developer documentation for %{name} for use with Qt Assistant
 
 %prep
-%setup -q
+%autosetup -p1
 %cmake_kde5
 
 %build
