@@ -5,10 +5,9 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: krunner
-Version: 5.72.0
-Release: 2
+Version: 5.73.0
+Release: 1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
-Patch0:	https://invent.kde.org/frameworks/krunner/commit/8f7ce559b84ee0c21de0256e6591793e4b95f411.patch
 Summary: Parallelized query system
 URL: http://kde.org/
 License: GPL
@@ -74,7 +73,7 @@ Developer documentation for %{name} for use with Qt Assistant
 %ninja_install -C build
 
 %files
-%{_datadir}/qlogging-categories5/krunner.categories
+%{_datadir}/qlogging-categories5/krunner.*categories
 %{_libdir}/qt5/qml/org/kde/runnermodel
 %{_datadir}/kservicetypes5/*
 %{_datadir}/dbus-1/interfaces/kf5_org.kde.krunner1.xml
