@@ -6,7 +6,7 @@
 
 Name: krunner
 Version: 5.79.0
-Release: 1
+Release: 2
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: Parallelized query system
 URL: http://kde.org/
@@ -30,6 +30,7 @@ BuildRequires: cmake(KF5Service)
 BuildRequires: cmake(KF5Plasma)
 BuildRequires: cmake(KF5Solid)
 BuildRequires: cmake(KF5ThreadWeaver)
+BuildRequires: cmake(KF5Activities)
 # For QCH format docs
 BuildRequires: doxygen
 BuildRequires: qt5-assistant
