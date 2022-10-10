@@ -4,7 +4,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: krunner
-Version: 5.98.0
+Version: 5.99.0
 Release: 1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: Parallelized query system
@@ -87,7 +87,7 @@ Developer documentation for %{name} for use with Qt Assistant
 %{_libdir}/*.so
 %{_libdir}/cmake/KF5*
 %{_libdir}/qt5/mkspecs/*
-%{_datadir}/kdevfiletemplates/templates/*
+%{_datadir}/kdevappwizard/templates/*
 
 %files -n %{name}-devel-docs
 %{_docdir}/qt5/*.{tags,qch}
